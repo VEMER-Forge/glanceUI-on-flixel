@@ -1,0 +1,12 @@
+{
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	
+	"editor.codeActionsOnSave": {
+	"source.organizeImports": "never"
+	},
+	"editor.insertSpaces": false,
+	"editor.tabSize": 3
+	}
