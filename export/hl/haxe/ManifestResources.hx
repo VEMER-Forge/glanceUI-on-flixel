@@ -1,6 +1,7 @@
 package;
 
 import haxe.io.Bytes;
+import haxe.io.Path;
 import lime.utils.AssetBundle;
 import lime.utils.AssetLibrary;
 import lime.utils.AssetManifest;
@@ -54,11 +55,11 @@ import sys.FileSystem;
 
 		if (rootPath == null) {
 
-			#if (ios || tvos || emscripten)
+			#if (ios || tvos || webassembly)
 			rootPath = "assets/";
 			#elseif android
 			rootPath = "";
-			#elseif console
+			#elseif (console || sys)
 			rootPath = lime.system.System.applicationDirectory;
 			#else
 			rootPath = "./";
@@ -76,17 +77,6 @@ import sys.FileSystem;
 
 		var data, manifest, library, bundle;
 
-		#if kha
-
-		null
-		library = AssetLibrary.fromManifest (manifest);
-		Assets.registerLibrary ("null", library);
-
-		if (library != null) preloadLibraries.push (library);
-		else preloadLibraryNames.push ("null");
-
-		#else
-
 		Assets.libraryPaths["default"] = rootPath + "manifest/default.json";
 		
 
@@ -95,19 +85,10 @@ import sys.FileSystem;
 		else preloadLibraryNames.push ("default");
 		
 
-		#end
-
 	}
 
 
 }
-
-
-#if kha
-
-null
-
-#else
 
 #if !display
 #if flash
@@ -164,12 +145,12 @@ null
 
 #elseif (desktop || cpp)
 
-@:keep @:file("C:/Users/ITWORK/lime/flixel/5,8,0/assets/sounds/beep.ogg") @:noCompletion #if display private #end class __ASSET__flixel_sounds_beep_ogg extends haxe.io.Bytes {}
-@:keep @:file("C:/Users/ITWORK/lime/flixel/5,8,0/assets/sounds/flixel.ogg") @:noCompletion #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends haxe.io.Bytes {}
-@:keep @:font("C:/Users/ITWORK/lime/flixel/5,8,0/assets/fonts/nokiafc22.ttf") @:noCompletion #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font {}
-@:keep @:font("C:/Users/ITWORK/lime/flixel/5,8,0/assets/fonts/monsterrat.ttf") @:noCompletion #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font {}
-@:keep @:image("C:/Users/ITWORK/lime/flixel/5,8,0/assets/images/ui/button.png") @:noCompletion #if display private #end class __ASSET__flixel_images_ui_button_png extends lime.graphics.Image {}
-@:keep @:image("C:/Users/ITWORK/lime/flixel/5,8,0/assets/images/logo/default.png") @:noCompletion #if display private #end class __ASSET__flixel_images_logo_default_png extends lime.graphics.Image {}
+@:keep @:file("C:/HaxeToolkit/haxe/lib/flixel/5,8,0/assets/sounds/beep.ogg") @:noCompletion #if display private #end class __ASSET__flixel_sounds_beep_ogg extends haxe.io.Bytes {}
+@:keep @:file("C:/HaxeToolkit/haxe/lib/flixel/5,8,0/assets/sounds/flixel.ogg") @:noCompletion #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends haxe.io.Bytes {}
+@:keep @:font("C:/HaxeToolkit/haxe/lib/flixel/5,8,0/assets/fonts/nokiafc22.ttf") @:noCompletion #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font {}
+@:keep @:font("C:/HaxeToolkit/haxe/lib/flixel/5,8,0/assets/fonts/monsterrat.ttf") @:noCompletion #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font {}
+@:keep @:image("C:/HaxeToolkit/haxe/lib/flixel/5,8,0/assets/images/ui/button.png") @:noCompletion #if display private #end class __ASSET__flixel_images_ui_button_png extends lime.graphics.Image {}
+@:keep @:image("C:/HaxeToolkit/haxe/lib/flixel/5,8,0/assets/images/logo/default.png") @:noCompletion #if display private #end class __ASSET__flixel_images_logo_default_png extends lime.graphics.Image {}
 
 @:keep @:noCompletion #if display private #end class __ASSET__assets_fonts_pixeled_ttf extends lime.text.Font { public function new () { __fontPath = ManifestResources.rootPath + "assets/fonts/Pixeled.ttf"; name = "Pixeled Regular"; super (); }}
 @:keep @:noCompletion #if display private #end class __ASSET__assets_glanceui_fonts_pixeloidmono_ttf extends lime.text.Font { public function new () { __fontPath = ManifestResources.rootPath + "assets/glanceUI/fonts/PixeloidMono.ttf"; name = "Pixeloid Mono"; super (); }}
@@ -202,8 +183,6 @@ null
 #end
 
 #end
-#end
-
 #end
 
 #end

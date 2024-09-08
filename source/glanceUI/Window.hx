@@ -1,82 +1,89 @@
 package glanceUI;
 
-import glanceUI.components.CloseButton;
-import glanceUI.components.HideButton;
 import flixel.FlxG;
+import glanceUI._internal.Loader;
+import flixel.util.FlxSpriteUtil;
 import flixel.text.FlxText;
 import flixel.FlxSprite;
-// import flixel.group.FlxSpriteContainer;
+import flixel.group.FlxSpriteContainer;
 
-import glanceUI.utils.Loader;
+enum ButtonOverlay {
+	ODefault;
+}
 
-import flixel.group.FlxSpriteGroup.FlxTypedSpriteGroup;
-
-class Window extends FlxTypedSpriteGroup<FlxSprite>
-{
-	var hitbox:FlxSprite;
-
-	var border:FlxSprite;
-	var maker:FlxSprite;
-
+class Window extends FlxSpriteContainer {
+	var header:FlxSprite;
 	var title:FlxText;
+	var body:FlxSprite;
 
-	var closeButton:CloseButton;
-	var hideButton:HideButton;
+	var outline:FlxSprite;
 
-	// var container:FlxSpriteContainer;
+	var buttons:Array<Button> = [];
 
-	public function new(x:Float, y:Float, width:Int, height:Int, name:String)
-	{
+	public function new(x = 0.0, y = 0.0, width:Int, height:Int, name:String, overlay:ButtonOverlay = ODefault) {
 		super(x, y);
 
-		border = new FlxSprite(x, y).makeGraphic(width + 4, height + 4, 0xFF000000);
-		border.antialiasing = false;
-		add(border);
+		header = new FlxSprite(0, -30).makeGraphic(width, 30, 0xFF0EB16F);
+		add(header);
 
-		maker = new FlxSprite(x + 2, y + 2).makeGraphic(width, height, 0xFF00FF97);
-		maker.antialiasing = false;
-		add(maker);
-
-		title = new FlxText(x + 4, y + 1, width / 2, name, 20);
+		title = new FlxText(4, -29, width / 2, name, 20);
 		title.color = 0xFF000000;
 		title.font = Loader.font('PixeloidMono');
 		title.antialiasing = false;
 		add(title);
 
-		hitbox = new FlxSprite(x, y).makeGraphic(width + 4, 30, 0x28008A50);
-		hitbox.antialiasing = false;
-		add(hitbox);
+		switch(overlay) {
+			case ODefault:
+				var buttonMargin = 0.0;
 
-		closeButton = new CloseButton(maker.width - 13 , y + 4, 2.3);
-		add(closeButton);
+				var closeButton = new Button(header.width, 0, 'buttons/close', 23, kill);
+				add(closeButton);
+				closeButton.y = header.y + (header.height - closeButton.height) / 2;
+				buttonMargin = closeButton.y - header.y;
+				closeButton.x -= closeButton.width + buttonMargin;
+				buttons.push(closeButton);
 
-		hideButton = new HideButton(maker.width - 40 , y + 4, 2.3);
-		add(hideButton);
+				var hideButton = new Button('buttons/hide', 23, hide);
+				add(hideButton);
+				hideButton.setPosition(closeButton.x - closeButton.width, closeButton.y);
+				buttons.push(hideButton);
+		}
+
+		body = new FlxSprite().makeGraphic(width, height, 0xFF00FF97);
+		add(body);
+
+		outline = new FlxSprite(-2, -32).makeGraphic(Math.ceil(this.width) + 4, Math.ceil(this.height) + 4, 0x00000000);
+		FlxSpriteUtil.drawRect(outline, 0, 0, this.width + 4, this.height + 4, 0xFF000000);
+		outline.antialiasing = false;
+		insert(0, outline);
 	}
 
+	var dragging = false;
 	override function update(elapsed:Float) {
+		if (FlxG.mouse.justPressed) {
+			var overlapped = false;
+			for (camera in cameras) {
+				if (FlxG.mouse.overlaps(header, camera)) overlapped = true;
+				for (button in buttons) if (FlxG.mouse.overlaps(button, camera)) overlapped = false;
+			}
 
-		if(FlxG.mouse.overlaps(hitbox) && FlxG.mouse.pressed)
-		{
-			hitbox.x += FlxG.mouse.deltaX;
-         hitbox.y += FlxG.mouse.deltaY;
+			if (overlapped) dragging = true;
+		}
+		if (FlxG.mouse.justReleased) dragging = false;
 
-			border.x = hitbox.x;
-			border.y = hitbox.y;
-
-			maker.x = border.x + 2;
-			maker.y = border.y + 2;
-
-			title.x = maker.x + 2;
-			title.y = border.y + 1;
-
-			closeButton.x = maker.x + hitbox.width - 29;
-			closeButton.y = hitbox.y + 4;
-
-			hideButton.x = maker.x + hitbox.width - 59;
-			hideButton.y = hitbox.y + 4;
+		if (dragging) {
+			x += FlxG.mouse.deltaX;
+			y += FlxG.mouse.deltaY;
 		}
 
 		super.update(elapsed);
+	}
+
+	public function hide() {
+		visible = active = false;
+	}
+
+	public function show() {
+		visible = active = true;
 	}
 }
