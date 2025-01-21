@@ -1,7 +1,7 @@
 # glanceUI
 ## PROTYPE VERSION
 <p align="center">
-   <img src="https://github.com/VEMER-Forge/glanceUI-on-flixel/blob/main/assets/glanceUI/img/glanceLogo.png" alt="logo UI" style="width:150px; height:150px; image-rendering: optimizeSpeed;">
+   <img src="https://github.com/VEMER-Forge/glanceUI-on-flixel/blob/main/assets/glanceUI/img/glanceLogo.png" alt="logo UI" style="width:150px; height:150px; background-repeat: no-repeat;">
 </p>
 
  ### !WARNING!
