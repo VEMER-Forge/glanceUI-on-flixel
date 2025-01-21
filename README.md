@@ -1,5 +1,7 @@
 <h1 align="center"><p>GlanceUI</p></h1>
-<img marin="0" src="https://github.com/VEMER-Forge/glanceUI-on-flixel/blob/main/assets/glanceUI/img/glanceLogo.png" alt="logo UI" style="width:150px; height:150px; image-rendering="pixelated"">
+<p align="center">
+ <img src="https://github.com/VEMER-Forge/glanceUI-on-flixel/blob/main/assets/glanceUI/img/glanceLogo.png" alt="logo UI" style="width:150px; height:150px; image-rendering="pixelated"">
+</p>
 <h2 align="center">PROTOTYPE VERSION</h2>
 
  ### !WARNING!
