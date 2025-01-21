@@ -1,5 +1,5 @@
 # glanceUI
-##PROTOTYPE
+## PROTYPE
 ![](https://github.com/VEMER-Forge/glanceUI-on-flixel/blob/main/assets/glanceUI/img/glanceLogo.png)
 
  !WARNING!
