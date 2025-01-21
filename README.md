@@ -1,7 +1,8 @@
-# glanceUI
-## PROTYPE VERSION
+<div style="align="center">
+   
+</div>
 <p align="center">
-   <img src="https://github.com/VEMER-Forge/glanceUI-on-flixel/blob/main/assets/glanceUI/img/glanceLogo.png" alt="logo UI" style="width:150px; height:150px; image-rendering: pixelated">
+   <img src="https://github.com/VEMER-Forge/glanceUI-on-flixel/blob/main/assets/glanceUI/img/glanceLogo.png" alt="logo UI" style="width:150px; height:150px; image-rendering="pixelated"">
 </p>
 
  ### !WARNING!
