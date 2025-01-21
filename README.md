@@ -5,6 +5,6 @@
 <h2 align="center">PROTOTYPE VERSION</h2>
 
 <p>
-<h2 align="center" color="red">!<span >WARNING</span>!</h2>
+<h2 align="center" color="red">!<text color=red>ERROR</text>!</h2>
 <h3 align="center">this is alpha stuff and unfinished all what you see gona be a change on submit</h3>
 </p>
