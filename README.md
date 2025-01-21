@@ -4,7 +4,5 @@
 </p>
 <h2 align="center">PROTOTYPE VERSION</h2>
 
-<p>
-<h2 align="center">!<text style="color: red;">WARNING</text>!</h2>
-<h3 align="center">this is alpha stuff and unfinished all what you see gona be a change on submit</h3>
-</p>
+> [!WARNING]
+> this UI in alpha state and more unfinished very more stuff.
