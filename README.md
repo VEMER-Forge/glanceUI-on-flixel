@@ -4,6 +4,7 @@
 </p>
 <h2 align="center">PROTOTYPE VERSION</h2>
 
+<p>
 <h2 align="center" style="color: red">!WARNING!</h2>
- this is alpha stuff and unfinished all what you see gona be a change on submit
-
+<h3 align="center">this is alpha stuff and unfinished all what you see gona be a change on submit</h3>
+</p>
