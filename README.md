@@ -1,5 +1,5 @@
 <div style="align="center">
-   <h1>GlanceUI</h1>
+   <h1 text-aligin="center">GlanceUI</h1>
 </div>
 <p align="center">
    <img src="https://github.com/VEMER-Forge/glanceUI-on-flixel/blob/main/assets/glanceUI/img/glanceLogo.png" alt="logo UI" style="width:150px; height:150px; image-rendering="pixelated"">
