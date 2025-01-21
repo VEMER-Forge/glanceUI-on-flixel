@@ -29,6 +29,11 @@ class Button extends FlxSprite {
 
 		animation.curAnim.curFrame = overlapped ? 1 : 0;
 
+		if(overlapped)
+			Mouse.changeCursor(BUTTON);
+		else
+			Mouse.changeCursor(AUTO);
+
 		super.update(elapsed);
 
 		if (FlxG.mouse.justPressed && overlapped) clicked = true;

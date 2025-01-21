@@ -5,6 +5,9 @@ class Loader
 	public static function img(key:String = 'placeHolder', format:String = 'png')
 		return 'assets/glanceUI/img/$key.$format';
 
+	public static function imgUI(key:String = 'placeHolder', format:String = 'png')
+		return 'assets/glanceUI/img/$key.$format';
+
 	public static function font(key:String = 'TimesNewRoman', format:String = 'ttf')
 		return 'assets/glanceUI/fonts/$key.$format';
 

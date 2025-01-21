@@ -19,7 +19,7 @@ class ApplicationMain
 		lime.system.System.__registerEntryPoint("test GlanceUI", create);
 
 		#if (js && html5)
-		#if (munit || utest)
+		#if (munit || (utest && openfl_enable_utest_legacy_mode))
 		lime.system.System.embed("test GlanceUI", null, 1280, 720);
 		#end
 		#else
@@ -35,7 +35,7 @@ class ApplicationMain
 		ManifestResources.init(config);
 		#end
 
-		app.meta["build"] = "1";
+		app.meta["build"] = "24";
 		app.meta["company"] = "HaxeFlixel";
 		app.meta["file"] = "test GlanceUI";
 		app.meta["name"] = "test GlanceUI";
@@ -68,7 +68,7 @@ class ApplicationMain
 
 		attributes.context = {
 			antialiasing: 0,
-			background: 18175,
+			background: 0,
 			colorDepth: 32,
 			depth: true,
 			hardware: true,
@@ -104,7 +104,7 @@ class ApplicationMain
 		#elseif air
 		app.window.title = "test GlanceUI";
 		#else
-		app.window.context.attributes.background = 18175;
+		app.window.context.attributes.background = 0;
 		app.window.frameRate = 165;
 		#end
 
