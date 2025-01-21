@@ -1,4 +1,4 @@
-<div style="align="center">
+<div style="align:center;">
    <h1 text-aligin="center">GlanceUI</h1>
 </div>
 <p align="center">
