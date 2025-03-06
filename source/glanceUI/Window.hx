@@ -7,6 +7,7 @@ import flixel.text.FlxText;
 import flixel.FlxSprite;
 import flixel.group.FlxSpriteContainer;
 import glanceUI._internal.TextUI;
+// import glanceUI.
 
 enum ButtonOverlay {
 	ODefault;
@@ -14,9 +15,9 @@ enum ButtonOverlay {
 
 class Window extends FlxSpriteContainer {
 	var header:FlxSprite;
-	var title:FlxText;
+	// var title:FlxText;
 
-	var testTxt:TextUI;
+	var title:TextUI;
 	var body:FlxSprite;
 
 	var outline:FlxSprite;
@@ -31,10 +32,10 @@ class Window extends FlxSpriteContainer {
 		header = new FlxSprite(0, -30).makeGraphic(width, 30, 0xFF0EB16F);
 		add(header);
 
-		testTxt = new TextUI(4, -29, 20, name);
-		testTxt.color = 0xFF000000;
-		testTxt.antialiasing = false;
-		add(testTxt);
+		title = new TextUI(4, -29, 20, name);
+		title.color = 0xFF000000;
+		title.antialiasing = false;
+		add(title);
 
 		switch(overlay) {
 			case ODefault:

@@ -1,4 +1,6 @@
 package glanceUI._internal;
+import flixel.util.FlxSave;
+import flixel.FlxG;
 
 class Loader
 {
@@ -16,4 +18,12 @@ class Loader
 
 	public static function file(key:String = 'placeHolder', format:String = 'txt')
 		return 'assets/glanceUI/data/$key.$format';
+
+	@:access(flixel.util.FlxSave.validate)
+	inline public static function getSavePath():String {
+		final company:String = FlxG.stage.application.meta.get('company');
+		// #if (flixel < "5.0.0") return company; #else
+		return '${company}/${flixel.util.FlxSave.validate(FlxG.stage.application.meta.get('file'))}';
+		// #end
+	}
 }

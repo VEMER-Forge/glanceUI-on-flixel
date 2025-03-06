@@ -4,9 +4,13 @@ import flixel.addons.ui.FlxInputText;
 import flixel.FlxG;
 import flixel.FlxState;
 import sys.FileSystem;
+import flixel.FlxSprite;
 
 import glanceUI.*;
 import glanceUI.taskBar.TaskBar;
+import glanceUI._internal.Loader;
+
+import glanceUI.notification.Notification;
 
 
 
@@ -18,35 +22,33 @@ class PlayState extends FlxState {
 
 	override public function create() {
 
-		FlxG.camera.bgColor = 0xFF616161;
+		FlxG.camera.bgColor = 0xFF000000;
+
+		var bg:FlxSprite = new FlxSprite(0, -60).loadGraphic(Loader.img('Puppy Minus BF-by CAFuture', 'jpg'));
+		bg.scale.set(0.76, 0.76);
+		bg.updateHitbox();
+		bg.antialiasing = true;
+		add(bg);
 
 		// FlxG.camera.pixelPerfectRender = true;
 
 		// bar = new TaskBar(true, 'lol');
 		// add(bar);
 
-		window = new Window(10, 40, 800, 500, 'TEST');
+		window = new Window(10, 40, 800, 500, 'ОКНО - 1');
 		add(window);
 
 		input = new FlxInputText(window.x + 20, window.y + 20, 200, "Text Box", 12, 0xFF000000, 0xFF0EB16F);
 		window.content.add(input);
 
 
-		var huj:TaskBar = new TaskBar(false);
-		add(huj);
+		// var huj:TaskBar = new TaskBar(false);
+		// add(huj);
+
+		var task:Notification = new Notification( 30, 40,);
+		add(task);
 
 		super.create();
-		 // Path to the folder
-		 var folderPath:String = "assets/glanceUI/data/themes/";
-
-		 // Get the list of files in the folder
-		 var files:Array<String> = FileSystem.readDirectory(folderPath);
-
-		 // Print the list of files
-		 for (file in files)
-		 {
-			  trace(file);
-		 }
 	}
 
 	override public function update(elapsed:Float) {

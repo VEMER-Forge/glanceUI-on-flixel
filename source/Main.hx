@@ -10,6 +10,8 @@ class Main extends Sprite
 	{
 		super();
 		addChild(new FlxGame(0, 0, PlayState, 165, 165));
-		FlxG.mouse.useSystemCursor = true;
+
+		
+		glanceUI.Glance.init();
 	}
 }

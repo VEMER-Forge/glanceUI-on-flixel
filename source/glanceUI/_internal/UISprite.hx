@@ -2,6 +2,7 @@ package glanceUI._internal;
 
 import flixel.FlxSprite;
 import flixel.group.FlxSpriteContainer;
+import flixel.util.FlxSpriteUtil;
 // import glanceUI._internal.crashHandlers.ScaleHandler;
 
 class UISprite extends FlxSpriteContainer {
@@ -12,9 +13,17 @@ class UISprite extends FlxSpriteContainer {
 	var outline:FlxSprite;
 	var body:FlxSprite;
 
-	public function new() {
-
+	public function new(width:Int, height:Int) {
 		super();
+		_width = width;
+		_height = height;
+
+		outline = new FlxSprite(-2, -32).makeGraphic(Math.ceil(this.width) + 4, Math.ceil(this.height) + 4, 0xFF000000);
+		outline.antialiasing = false;
+		add(outline);
+
+		body = new FlxSprite(0,0).makeGraphic(_width, _width, 0xFF00FF99);
+		add(body);
 
 		trace('hujna');
 	}
