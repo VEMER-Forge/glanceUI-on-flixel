@@ -8,7 +8,7 @@ class Type {
 
 	public static var ERROR:String = 'error';
 
-	public static var DEFAULT:String = '404';
+	public static var NONE:String = 'none';
 
 	public static var SUCCESS:String = 'success';
 }

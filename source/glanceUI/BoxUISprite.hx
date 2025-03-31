@@ -17,7 +17,10 @@ class BoxUISprite extends FlxSpriteContainer {
 
 		super(x,y);
 
-		outline = new FlxSprite(-2, -32).makeGraphic(width + 4, height + 4, Theme.lineColor);
+		_width = width;
+		_height = height;
+
+		outline = new FlxSprite(-2, -2).makeGraphic(width + 4, height + 4, Theme.lineColor);
 		add(outline);
 
 		body = new FlxSprite(0, 0).makeGraphic(width, height, Theme.mainColor);

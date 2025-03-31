@@ -9,11 +9,10 @@ import flixel.group.FlxSpriteContainer;
 
 
 /**
- text maded on openFL for better render text
+ text maded on openFL for better render text (this is shit)
  but dosen't have features like FlxTextFormat idk
 
  write VEMER
- хуйня полная
  */
 
 class TextUI extends FlxSpriteContainer {

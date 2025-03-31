@@ -19,6 +19,7 @@ class PlayState extends FlxState {
 	var bar:TaskBar;
 
 	var input:FlxInputText;
+	var task:Notification;
 
 	override public function create() {
 
@@ -42,10 +43,10 @@ class PlayState extends FlxState {
 		window.content.add(input);
 
 
-		// var huj:TaskBar = new TaskBar(false);
-		// add(huj);
+		var huj:TaskBar = new TaskBar(false);
+		add(huj);
 
-		var task:Notification = new Notification( 30, 40,);
+		task = new Notification(30, 40);
 		add(task);
 
 		super.create();
@@ -53,6 +54,11 @@ class PlayState extends FlxState {
 
 	override public function update(elapsed:Float) {
 		if (FlxG.keys.justPressed.R) window.revive();
+		if (FlxG.keys.justPressed.T) task.show("none", "hgfuisngiuengiuensgiue\nniugneiugneiugnvi\nhgfuisngiuengiuensgiue\nniugneiugneiugnvi\nhgfuisngiuengiuensgiue\nniugneiugneiugnvi\nhgfuisngiuengiuensgiue\nniugneiugneiugnvi\nhgfuisngiuengiuensgiue\nniugneiugneiugnvi\nhgfuisngiuengiuensgiue\nniugneiugneiugnvi\nhgfuisngiuengiuensgiue\nniugneiugneiugnvi\nhgfuisngiuengiuensgiue\nniugneiugneiugnvi\nhgfuisngiuengiuensgiue\nniugneiugneiugnvi\nhgfuisngiuengiuensgiue\nniugneiugneiugnvi\nhgfuisngiuengiuensgiue\nniugneiugneiugnvi");
+		if (FlxG.keys.justPressed.E) task.show("error");
+		if (FlxG.keys.justPressed.S) task.show("success");
+		if (FlxG.keys.justPressed.I) task.show("info");
+		if (FlxG.keys.justPressed.W) task.show("warning");
 		super.update(elapsed);
 	}
 }

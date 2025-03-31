@@ -18,11 +18,11 @@ class UISprite extends FlxSpriteContainer {
 		_width = width;
 		_height = height;
 
-		outline = new FlxSprite(-2, -32).makeGraphic(Math.ceil(this.width) + 4, Math.ceil(this.height) + 4, 0xFF000000);
+		outline = new FlxSprite(-2, -32).makeGraphic(_width + 4, _height + 4, 0xFF000000);
 		outline.antialiasing = false;
 		add(outline);
 
-		body = new FlxSprite(0,0).makeGraphic(_width, _width, 0xFF00FF99);
+		body = new FlxSprite(0,0).makeGraphic(_width, _height, 0xFF00FF99);
 		add(body);
 
 		trace('hujna');
