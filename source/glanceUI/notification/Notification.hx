@@ -8,6 +8,7 @@ import flixel.group.FlxSpriteContainer;
 import glanceUI.BoxUISprite;
 import glanceUI.TextUI;
 import glanceUI._internal.Loader;
+import glanceUI._internal.theme.Theme;
 
 class Notification extends FlxSpriteContainer {
 
@@ -39,10 +40,10 @@ class Notification extends FlxSpriteContainer {
 	}
 
 	public function createBG(x:Float = 0, y:Float = 0, type:String = "none", data:String = "this is test text", hideButt:Bool = true) {
-		var text:TextUI = new TextUI(100, 40, data, 16);
+		var text:TextUI = new TextUI(100, 40, 16, data);
+		text.color = Theme.lineColor;
 
 		_height = FlxMath.maxInt(Std.int(text.textField.textHeight + (text.y * 1.2)), 120);
-
 		wipeGroup(spriteContent);
 
 		var bg:BoxUISprite = new BoxUISprite(x, y, _width, _height);
@@ -51,6 +52,10 @@ class Notification extends FlxSpriteContainer {
 		var icon:Icon = new Icon(20, 10, 6,type);
 		icon.y = (bg._height - icon.height) / 2;
 		spriteContent.add(icon);
+
+		var title:TextUI = new TextUI(10, 5, 16, type.toUpperCase());
+		title.color = Theme.lineColor;
+		spriteContent.add(title);
 
 
 		spriteContent.add(text);
@@ -61,8 +66,6 @@ class Notification extends FlxSpriteContainer {
 				obj.destroy();
 
 			group.clear();
-
-			trace("CLEARED GROUP");
 	}
 
 	public function show(type:String = "warning", data:String = "this is a test\ntext for notification", hideButton:Bool = true){
@@ -75,7 +78,6 @@ class Notification extends FlxSpriteContainer {
 	}
 
 	public function hide(){
-		trace("timer complete");
 		FlxTween.tween(this,{alpha: 0, y:tweenBackY}, 0.25, {ease: FlxEase.cubeInOut});
 	}
 

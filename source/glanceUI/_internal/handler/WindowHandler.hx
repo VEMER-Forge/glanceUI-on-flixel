@@ -10,4 +10,8 @@ class WindowHandler {
 		}return 300; 200;
 
 	}
+
+	public static var width:Int = 300;
+	public static var height:Int = 200;
+	public static var cordinates<Array>
 }

@@ -1,18 +1,34 @@
 package glanceUI._internal.theme;
 
+typedef ThemeType = {
+	name_col:String,
+	main_col:String,
+	foreign_col:String,
+	text_col:String,
+	line_col:String,
+}
+
 class Theme {
 
-	public static var mainColor:Int = 0xFF00FF99;
-	public static var foreignColor:Int = 0xFF0EB16F;
-	public static var textColor:Int = 0xFF000000;
-	public static var lineColor:Int = 0xFF000000;
-	public static var nameTheme:String = "default";
+	// i was thinking to change the themes, so here you go -- mr_chaoss
 
-	public static function setTheme() {
-		mainColor = Std.parseInt(Config.curThemeFile.mainColor);
-		foreignColor = Std.parseInt(Config.curThemeFile.mainColor);
-		textColor = Std.parseInt(Config.curThemeFile.textColor);
-		lineColor = Std.parseInt(Config.curThemeFile.lineColor);
-		nameTheme = Config.curThemeFile.nameTheme;
+	public static var mainColor(default, null):Int;
+	public static var foreignColor(default, null):Int;
+	public static var textColor(default, null):Int;
+	public static var lineColor(default, null):Int;
+	public static var nameTheme(default, null):String;
+
+	public static function applyTheme(theme:ThemeType) {
+		if(theme == null) return;
+
+		mainColor = Std.parseInt(theme.main_col);
+		foreignColor = Std.parseInt(theme.foreign_col);
+		textColor = Std.parseInt(theme.text_col);
+		lineColor = Std.parseInt(theme.line_col);
+		nameTheme = theme.name_col;
+
+		#if debug
+		FlxG.log.add('Current Theme: $nameTheme');
+		#end
 	}
 }

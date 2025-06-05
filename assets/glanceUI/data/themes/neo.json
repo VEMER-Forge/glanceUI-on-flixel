@@ -1,7 +1,7 @@
 {
-	"mainColor": "0xFF000000",
-	"foreignColor": "0xFF000000",
-	"lineColor": "0xFF00FF99",
-	"textColor": "0xFF00FF99",
-	"nameTheme": "neo"
+	"main_col": "0xFF000000",
+	"foreign_col": "0xFF000000",
+	"line_col": "0xFF00FF99",
+	"text_col": "0xFF00FF99",
+	"name_col": "neo"
 }

@@ -23,6 +23,8 @@ class PlayState extends FlxState {
 
 	override public function create() {
 
+		glanceUI.Glance.init();
+
 		FlxG.camera.bgColor = 0xFF000000;
 
 		var bg:FlxSprite = new FlxSprite(0, -60).loadGraphic(Loader.img('Puppy Minus BF-by CAFuture', 'jpg'));
@@ -43,7 +45,7 @@ class PlayState extends FlxState {
 		window.content.add(input);
 
 
-		var huj:TaskBar = new TaskBar(false);
+		var huj:TaskBar = new TaskBar(true);
 		add(huj);
 
 		task = new Notification(30, 40);
@@ -59,6 +61,8 @@ class PlayState extends FlxState {
 		if (FlxG.keys.justPressed.S) task.show("success");
 		if (FlxG.keys.justPressed.I) task.show("info");
 		if (FlxG.keys.justPressed.W) task.show("warning");
+		if (FlxG.keys.justPressed.Q) Config.switchSave("neo");
+		if (FlxG.keys.justPressed.Y) Config.switchSave("default");
 		super.update(elapsed);
 	}
 }
