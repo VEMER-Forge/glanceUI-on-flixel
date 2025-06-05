@@ -21,14 +21,15 @@
 	<window if="html5" resizable="false" />
 
 	<!--Desktop-specific-->
-	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" />
-
+	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true"/>
 	<!--Mobile-specific-->
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
 
 	<!-- _____________________________ Path Settings ____________________________ -->
 
-	<set name="BUILD_DIR" value="export" />
+	<set name="BUILD_DIR" value="export"/>
+
+	<classpath name="libraries"/>
 	<source path="source" />
 	<assets path="assets" />
 
@@ -41,7 +42,7 @@
 	<haxelib name="flixel-addons" version="3.3.2"/>
 
 	<!--In case you want to use the ui package-->
-	<haxelib name="flixel-ui"/>
+	<haxelib name="flixel-ui" version="2.6.4"/>
 
 	<!--In case you want to use nape with flixel-->
 	<!--<haxelib name="nape-haxe4" />-->
