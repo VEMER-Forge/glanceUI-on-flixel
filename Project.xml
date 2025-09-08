@@ -35,7 +35,7 @@
 
 	<!-- _______________________________ Libraries ______________________________ -->
 
-	<haxelib name="flixel" version="6.0.0"/>
+	<haxelib name="flixel" version="6.1.0"/>
 	<!-- <haxelib name="flixel-ui"/> -->
 
 	<!--In case you want to use the addons package-->

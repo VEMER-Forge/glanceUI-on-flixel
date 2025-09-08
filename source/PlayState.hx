@@ -27,10 +27,7 @@ class PlayState extends FlxState {
 	override public function create() {
 
 		glanceUI.modules.Glance.init();
-
-=======
 		glanceUI.Glance.init();
->>>>>>> 16422a13d1bec439e6d91bf636351af47b30056c
 
 		FlxG.camera.bgColor = 0xFF000000;
 
