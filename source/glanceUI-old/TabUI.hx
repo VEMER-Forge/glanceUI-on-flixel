@@ -1,5 +1,0 @@
-package glanceUI;
-
-class TabUI {
-
-}

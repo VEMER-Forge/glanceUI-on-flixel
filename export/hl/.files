@@ -7,6 +7,11 @@ export/hl/bin/assets/glanceUI/img/buttons/buttonScroll.png
 export/hl/bin/assets/glanceUI/img/buttons/checkbox.png
 export/hl/bin/assets/glanceUI/img/buttons/close.png
 export/hl/bin/assets/glanceUI/img/buttons/hide.png
+export/hl/bin/assets/glanceUI/img/buttons/neo/button.png
+export/hl/bin/assets/glanceUI/img/buttons/neo/buttonScroll.png
+export/hl/bin/assets/glanceUI/img/buttons/neo/checkbox.png
+export/hl/bin/assets/glanceUI/img/buttons/neo/close.png
+export/hl/bin/assets/glanceUI/img/buttons/neo/hide.png
 export/hl/bin/assets/glanceUI/img/buttons/scroll/center.png
 export/hl/bin/assets/glanceUI/img/buttons/scroll/left.png
 export/hl/bin/assets/glanceUI/img/buttons/scroll/right.png
@@ -27,6 +32,7 @@ export/hl/bin/assets/glanceUI/img/window/rightDownWin.png
 export/hl/bin/assets/glanceUI/img/window/rightUpWin.png
 export/hl/bin/assets/glanceUI/snd/click.wav
 export/hl/bin/assets/glanceUI/snd/clickClose.wav
+export/hl/bin/assets/images/image.png
 export/hl/bin/assets/images/Puppy Minus BF-by CAFuture.jpg
 export/hl/bin/flixel/sounds/beep.ogg
 export/hl/bin/flixel/sounds/flixel.ogg

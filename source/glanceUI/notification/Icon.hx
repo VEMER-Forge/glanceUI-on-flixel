@@ -9,6 +9,6 @@ class Icon extends FlxSprite {
 		super(x, y);
 		loadGraphic(Loader.img("notification/icons/" + type));
 		scale.set(size, size);
-		updateHitbox();
+		this.updateHitbox();
 	}
 }

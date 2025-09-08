@@ -1,1 +1,7 @@
-./export/*
+## Default
+
+.export/*
+.github/
+.haxelib/*
+
+vscode-project.hxml

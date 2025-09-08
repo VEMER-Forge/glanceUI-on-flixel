@@ -35,7 +35,7 @@ class ApplicationMain
 		ManifestResources.init(config);
 		#end
 
-		app.meta["build"] = "39";
+		app.meta["build"] = "42";
 		app.meta["company"] = "HaxeFlixel";
 		app.meta["file"] = "test GlanceUI";
 		app.meta["name"] = "test GlanceUI";

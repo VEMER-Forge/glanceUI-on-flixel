@@ -1,10 +1,11 @@
 package glanceUI._internal;
+
 import flixel.util.FlxSave;
 import flixel.FlxG;
 
 class Loader
 {
-	public static function img(key:String = 'placeHolder', format:String = 'png')
+	public static function img(key:String = 'glanceLogo', format:String = 'png')
 		return 'assets/glanceUI/img/$key.$format';
 
 	public static function imgUI(key:String = 'placeHolder', format:String = 'png')

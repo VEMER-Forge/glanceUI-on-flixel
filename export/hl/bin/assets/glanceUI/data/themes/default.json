@@ -1,7 +1,7 @@
 {
-	"mainColor": "0xFF00FF99",
-	"foreignColor": "0xFF0EB16F",
-	"lineColor": "0xFF000000",
-	"textColor": "0xFF000000",
-	"nameTheme": "default"
+	"main_col": "0xFF00FF99",
+	"foreign_col": "0xFF0EB16F",
+	"line_col": "0xFF000000",
+	"text_col": "0xFF000000",
+	"name_col": "default"
 }
