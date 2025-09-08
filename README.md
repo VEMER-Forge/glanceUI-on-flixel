@@ -1,4 +1,4 @@
-<h1 align="center"><p>GlanceUI</p></h1>
+<h1 align="center"><p>GlanceUI on flixel</p></h1>
 <p align="center">
  <img src="https://github.com/VEMER-Forge/glanceUI-on-flixel/blob/main/assets/glanceUI/img/glanceLogo.png" alt="logo UI" style="width:150px; height:150px; image-rendering="pixelated"">
 </p>
